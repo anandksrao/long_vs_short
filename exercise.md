@@ -4,6 +4,7 @@
 - [ReadSim](http://sourceforge.net/p/readsim/wiki/manual/) (read simulator)
 - [Velvet](https://www.ebi.ac.uk/~zerbino/velvet/) (short read *de-novo* assembler)
 - [Canu](https://github.com/marbl/canu/releases) (long read *de-novo* assembler)
+- [QUAST](http://bioinf.spbau.ru/quast) (assessment of assemblies)
 
   **Optional:**
   - [Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) (short read aligner)
@@ -12,6 +13,7 @@
 
 
 ### Introduction
+The aim of this exercise is to demonstrate the advantages of long reads in the assembly of highly repetitive genome sequences. We will try to assemble a small part of the chimp genome known to be highly repetitive.
 
 ### Generate test reads
 For the purposes of this demonstration we will use simulated data. If you would like to skip this step you can find a dataset for long and short reads here.
@@ -51,8 +53,17 @@ Perform *de-novo* assembly with long reads using Canu.
 canu -p longReadsCov30 -d longReadsCov30 genomesize=184664 -s specfile.dat -nanopore-raw longReadsCov30.fasta
 ```
 
+### Assessment of assemblies
+Assess both of your assemblies with QUAST:
 
-### Optional: Does alignment to a reference change things?
+```
+quast.py consensusFile/contigFile -R refChimp1.fna
+```
+
+Open quast_results/results/report.pdf to see the results. What do you see?
+Spoiler: You should see a large difference in '% genome covered'.
+
+### Optional: How does alignment of short reads compare to *de-novo* assembly of short reads in terms of '% genome covered'?
 
 To align the short reads we need a different alignment tool. Here, we will use Bowtie 2.
 
@@ -63,3 +74,12 @@ samtools view -bS shortReadsCov30_aligned.sam > shortReadsCov30_aligned.bam
 samtools sort shortReadsCov30_aligned.bam shortReadsCov30_aligned.sorted
 samtools index shortReadsCov30_aligned.sorted.bam
 ```
+
+To see how much of your genome was mapped, run:
+
+```
+samtools flagstat shortReadsCov30_aligned.sorted.bam
+```
+
+How do you explain the difference in '% genome covered' between the *de-novo* and the alignment assembly?
+
