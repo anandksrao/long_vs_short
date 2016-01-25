@@ -18,9 +18,7 @@ The aim of this exercise is to demonstrate the advantages of long reads in the a
 ### Generate test reads
 For the purposes of this demonstration we will use simulated data. Download the reference sequence from [here](https://figshare.com/s/be47dc169f8759545b5a).
 
-```
-If you would like to skip this step you can find a dataset for long and short reads under the link provided above.
-```
+*If you would like to skip this step you can find a dataset for long and short reads under the link provided above.*
 
 Generate short reads with the following command:
 
