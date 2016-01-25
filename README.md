@@ -6,8 +6,8 @@ Traditionally, these regions have been difficult to resolve due to the short rea
 ```
 Several mechanisms have been shown to replicate and insert sequences in genomes. Repeats may be grouped into
 interspersed, tandem and nested repeats stretching from two to millions of nucleotides in length and copy number.
-In humans the two main classes of repeats are short tandem repeats (microsatellites) and
-long interspersed repeats (short/long interspersed nuclea elements; SINEs and LINEs).
+In humans the two main classes of repeats are short tandem repeats (microsatellites) and long interspersed
+repeats (short/long interspersed nuclea elements; SINEs and LINEs).
 ```
 
 It comes at no surprise then, that the negative impact of repeats on the accuracy of the assembly is largely avoided when read lengths are longer than the typical repeats.
