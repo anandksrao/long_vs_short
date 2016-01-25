@@ -16,7 +16,11 @@
 The aim of this exercise is to demonstrate the advantages of long reads in the assembly of difficult genome sequences. We will try to assemble a small part of the chimp genome known to be highly repetitive.
 
 ### Generate test reads
-For the purposes of this demonstration we will use simulated data. If you would like to skip this step you can find a dataset for long and short reads here.
+For the purposes of this demonstration we will use simulated data. Download the reference sequence from [here](https://figshare.com/s/be47dc169f8759545b5a).
+
+```
+If you would like to skip this step you can find a dataset for long and short reads under the link provided above.
+```
 
 Generate short reads with the following command:
 
@@ -61,7 +65,8 @@ quast.py consensusFile/contigFile -R refChimp1.fna
 ```
 
 Open quast_results/results/report.pdf to see the results. What do you see?
-Spoiler: You should see a large difference in '% genome covered'.
+
+*Spoiler: You should see a large difference in '% genome covered'.*
 
 ### Why do the short reads fail?
 Let's assess our genomic sequence with RepeatMasker. This tool will allow us to identify any repetitive elements.
