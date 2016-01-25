@@ -6,14 +6,14 @@
 - [Canu](https://github.com/marbl/canu/releases) (long read *de-novo* assembler)
 - [QUAST](http://bioinf.spbau.ru/quast) (assessment of assemblies)
 
-  **Optional:**
-  - [Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) (short read aligner)
-  - [LAST](http://last.cbrc.jp/) (long read aligner)
-  - [samtools](http://www.htslib.org/download/) (for manipulating alignments)
+**Optional:**
+- [Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) (short read aligner)
+- [LAST](http://last.cbrc.jp/) (long read aligner)
+- [samtools](http://www.htslib.org/download/) (for manipulating alignments)
 
 
 ### Introduction
-The aim of this exercise is to demonstrate the advantages of long reads in the assembly of highly repetitive genome sequences. We will try to assemble a small part of the chimp genome known to be highly repetitive.
+The aim of this exercise is to demonstrate the advantages of long reads in the assembly of difficult genome sequences. We will try to assemble a small part of the chimp genome known to be highly repetitive.
 
 ### Generate test reads
 For the purposes of this demonstration we will use simulated data. If you would like to skip this step you can find a dataset for long and short reads here.
@@ -63,6 +63,11 @@ quast.py consensusFile/contigFile -R refChimp1.fna
 Open quast_results/results/report.pdf to see the results. What do you see?
 Spoiler: You should see a large difference in '% genome covered'.
 
+### Why do the short reads fail?
+Let's assess our genomic sequence with RepeatMasker. This tool will allow us to identify any repetitive elements.
+Go to the [RepeatMasker webserver](http://www.repeatmasker.org/cgi-bin/WEBRepeatMasker) and upload your file. Press 'submit sequence'.
+As you can see our sequence is full of repetitive elements. This is bad news for short reads and it is most likely the reason for our poor *de-novo* assembly. Our long read assembly did just fine it seems. It demonstrates that assembly of repetitive genome regions requires long reads that span the entire repeats.
+
 ### Optional: How does alignment of short reads compare to *de-novo* assembly of short reads in terms of '% genome covered'?
 
 To align the short reads we need a different alignment tool. Here, we will use Bowtie 2.
@@ -82,4 +87,8 @@ samtools flagstat shortReadsCov30_aligned.sorted.bam
 ```
 
 How do you explain the difference in '% genome covered' between the *de-novo* and the alignment assembly?
+
+### Further reading
+[Reconstructing complex regions of genomes using long-read sequencing technology](http://genome.cshlp.org/content/24/4/688.full)
+[Repetitive DNA and next-generation sequencing: computational challenges and solutions](http://www.nature.com/nrg/journal/v13/n1/full/nrg3117.html)
 
