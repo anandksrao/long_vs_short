@@ -13,7 +13,7 @@
 
 
 ### Introduction
-The aim of this exercise is to demonstrate the advantages of long reads in the assembly of difficult genome sequences. We will try to assemble a small part of the chimp genome known to be highly repetitive.
+The aim of this exercise is to demonstrate the advantages of long reads in the assembly of difficult genome sequences. We will try to assemble a small part of the chimp genome known to be highly repetitive. For a tutorial on de-novo assembly and read alignment see [here](https://github.com/demharters/assemblyTutorial).
 
 ### Generate test reads
 For the purposes of this demonstration we will use simulated data. Download the reference sequence from [here](https://figshare.com/s/be47dc169f8759545b5a).
@@ -72,7 +72,7 @@ As you can see our sequence is full of repetitive elements. This is bad news for
 
 ### Questions
 - Can you identify the minimum read length required to assemble this chimp sequence by 90%, 95%, 99%? Assume a 30x coverage and 0.001 error rates.
-- How high can you go with the error rates in the simulated long reads before assembly starts to fail? Assume 15kb read length and 30x coverage. Once you managed to break the long read de-novo assembly, does increasing the coverage restore the assembly?
+- How high can you go with the error rates in the simulated long reads before assembly starts to fail? Assume 15kb read length and 30x coverage. Once you managed to break the long read *de-novo* assembly, does increasing the coverage restore the assembly?
 
 ### Optional: How does alignment of short reads compare to *de-novo* assembly of short reads in terms of '% genome covered'?
 
