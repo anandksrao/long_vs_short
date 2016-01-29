@@ -70,6 +70,10 @@ Let's assess our genomic sequence with RepeatMasker. This tool will allow us to 
 Go to the [RepeatMasker webserver](http://www.repeatmasker.org/cgi-bin/WEBRepeatMasker) and upload your file. Press 'submit sequence'.
 As you can see our sequence is full of repetitive elements. This is bad news for short reads and it is most likely the reason for our poor *de-novo* assembly. Our long read assembly did just fine it seems. It demonstrates that assembly of repetitive genome regions requires long reads that span the entire repeats.
 
+### Questions
+- Can you identify the minimum read length required to assemble this chimp sequence by 90%, 95%, 99%? Assume a 30x coverage and 0.001 error rates.
+- How high can you go with the error rates in the simulated long reads before assembly starts to fail? Assume 15kb read length and 30x coverage. Once you managed to break the long read de-novo assembly, does increasing the coverage restore the assembly?
+
 ### Optional: How does alignment of short reads compare to *de-novo* assembly of short reads in terms of '% genome covered'?
 
 To align the short reads we need a different alignment tool. Here, we will use Bowtie 2.
