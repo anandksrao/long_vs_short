@@ -47,12 +47,18 @@ Perform *de-novo* assembly with short reads using Velvet.
 velveth chimp1 21 shortReadsCov30.fasta
 velvetg chimp1
 ```
+Velveth takes a number of sequence files as input, generates a hashtable and spits out two files sequences and roadmaps, which are required by velvetg.
+
+In the velveth command '21' is the kmer length used for the hash table. If you would like to know more read section 5.2 in the [manual](http://www.ebi.ac.uk/~zerbino/velvet/Manual.pdf). If you are interested try playing around with this value and see how it affects the assembly.
+
+For more information on how velvet works, see [here](http://microbialinformaticsj.biomedcentral.com/articles/10.1186/2042-5783-3-2).
 
 Perform *de-novo* assembly with long reads using Canu.
 
 ```
 canu -p longReadsCov30 -d longReadsCov30 genomesize=184664 -s specfile.dat -nanopore-raw longReadsCov30.fasta
 ```
+Canu is based on the Celera assembler. For terminology see [here](http://wgs-assembler.sourceforge.net/wiki/index.php/Celera_Assembler_Terminology).
 
 ### Assessment of assemblies
 Assess both of your assemblies with QUAST:
@@ -76,15 +82,17 @@ As you can see our sequence is full of repetitive elements. This is bad news for
 
 ### Optional: How does alignment of short reads compare to *de-novo* assembly of short reads in terms of '% genome covered'?
 
-To align the short reads we need a different alignment tool. Here, we will use Bowtie 2.
+To assemble the short reads by alignment we need a different alignment tool. Here, we will use Bowtie 2.
 
 ```
 bowtie2-build reference_chimp1.fna reference_chimp1.fna
 bowtie2 -f -x reference_chimp1.fna -U shortReadsCov30.fasta -S shortReadsCov30_aligned.sam
 samtools view -bS shortReadsCov30_aligned.sam > shortReadsCov30_aligned.bam
-samtools sort shortReadsCov30_aligned.bam shortReadsCov30_aligned.sorted
+samtools sort shortReadsCov30_aligned.bam -T shortReadsCov30_aligned.sorted -o shortReadsCov30_aligned.sorted.bam
 samtools index shortReadsCov30_aligned.sorted.bam
 ```
+
+Tutorial on [samtools](http://biobits.org/samtools_primer.html).
 
 To see how much of your genome was mapped, run:
 
