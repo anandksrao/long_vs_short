@@ -22,7 +22,7 @@ For the purposes of this demonstration we will use simulated data. Download the 
 Generate short reads with the following command:
 
 ```
-./readsim.py sim fa --ref refChimp1.fna --pre shortReadsCov30 --rev_strd on
+readsim.py sim fa --ref refChimp1.fna --pre shortReadsCov30 --rev_strd on
   --tech nanopore --read_mu 30 --read_dist normal --cov_mu 30
   --err_sub_mu 0.001 --err_in_mu 0.001 --err_del_mu 0.001
 ```
@@ -33,7 +33,7 @@ This simulation will generate a set of short fasta reads (30 bases on average) w
 Generate long reads with the following command:
 
 ```
-/readsim.py sim fa --ref refChimp1.fna --pre longReadsCov30
+readsim.py sim fa --ref refChimp1.fna --pre longReadsCov30
   --rev_strd on --tech nanopore --read_mu 15000 --read_dist normal --cov_mu 30
 ```
 
