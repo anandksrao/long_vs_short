@@ -24,7 +24,7 @@ Generate short reads with the following command:
 ```
 ./readsim.py sim fa --ref refChimp1.fna --pre shortReadsCov30 --rev_strd on --tech nanopore --read_mu 30 --read_dist normal --cov_mu 30 --err_sub_mu 0.001 --err_in_mu 0.001 --err_del_mu 0.001
 ```
-*Note the double dashes "--" for passing options*
+*Note these are double dashes "--"*
 
 This simulation will generate a set of short fasta reads (30 bases on average) with a 30x coverage using our reference sequence as a template. We set the substitution, insertion and deletion error rates to 0.1% to replicate the typical characteristics of short reads (even though the technology is set to "nanopore").
 
@@ -75,9 +75,10 @@ Open quast_results/results/report.pdf to see the results. What do you see?
 
 ### Why do the short reads fail?
 Let's assess our genomic sequence with RepeatMasker. This tool will allow us to identify any repetitive elements.
-Go to the [RepeatMasker webserver](http://www.repeatmasker.org/cgi-bin/WEBRepeatMasker) and upload the reference sequence. Note, the sequence has to be shorter than 100kb, so you will have to modify the file. *If the run takes too long, try a shorter sequence.*
-Press 'submit sequence'.
-As you can see our sequence is full of repetitive elements. This is bad news for short reads and it is most likely the reason for our poor *de-novo* assembly. Our long read assembly did just fine it seems. It demonstrates that assembly of repetitive genome regions requires long reads that span the entire repeats.
+- Go to the [RepeatMasker webserver](http://www.repeatmasker.org/cgi-bin/WEBRepeatMasker) and upload the reference sequence.
+*Note, the sequence has to be shorter than 100kb, so you will have to modify the file. If the run takes too long, try a shorter sequence.*
+- Press 'submit sequence'.
+As you can see our sequence is full of repetitive elements. This is bad news for short reads and it is most likely the reason for our poor *de-novo* assembly. Our long read assembly did just fine it seems. It demonstrates that assembly of repetitive genome regions requires long reads that span entire repeats.
 
 ### Questions
 - Can you identify the minimum read length required to assemble this chimp sequence by 90%, 95%, 99%? Assume a 30x coverage and 0.001 error rates.
