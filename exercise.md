@@ -22,19 +22,19 @@ For the purposes of this demonstration we will use simulated data. Download the 
 Generate short reads with the following command:
 
 ```
-readsim.py sim fa --ref refChimp1.fna --pre shortReadsCov30 --rev_strd on
-  --tech nanopore --read_mu 30 --read_dist normal --cov_mu 30
-  --err_sub_mu 0.001 --err_in_mu 0.001 --err_del_mu 0.001
+readsim.py sim fa --ref refChimp1.fna --pre shortReadsCov30 --rev_strd on\
+ --tech nanopore --read_mu 30 --read_dist normal --cov_mu 30\
+ --err_sub_mu 0.001 --err_in_mu 0.001 --err_del_mu 0.001
 ```
-*Note these are double dashes "--"*
+*Note the use of double dashes "--". Backslashes indicate line breaks*
 
 This simulation will generate a set of short fasta reads (30 bases on average) with a 30x coverage using our reference sequence as a template. We set the substitution, insertion and deletion error rates to 0.1% to replicate the typical characteristics of short reads (even though the technology is set to "nanopore").
 
 Generate long reads with the following command:
 
 ```
-readsim.py sim fa --ref refChimp1.fna --pre longReadsCov30
-  --rev_strd on --tech nanopore --read_mu 15000 --read_dist normal --cov_mu 30
+readsim.py sim fa --ref refChimp1.fna --pre longReadsCov30\
+ --rev_strd on --tech nanopore --read_mu 15000 --read_dist normal --cov_mu 30
 ```
 
 This simulation will generate a set of long fasta reads (15kb on average) also with a 30x coverage and using our reference sequence as a template. The substitution, insertion and deletion error rates are set to 3% (i.e. we are simulating corrected reads). The error rates selected here are high and are constantly improving as Nanopore technology matures. For more information on correction see (Loman 2015, Nature Methods)[http://www.nature.com/nmeth/journal/v12/n8/full/nmeth.3444.html].
@@ -59,7 +59,8 @@ For more information on how velvet works, see [here](http://microbialinformatics
 Perform *de-novo* assembly with long reads using Canu.
 
 ```
-canu -p longReadsCov30 -d longReadsCov30_assembly genomesize=184664 -s specfile.dat -nanopore-raw longReadsCov30.fasta
+canu -p longReadsCov30 -d longReadsCov30_assembly genomesize=184664\
+ -nanopore-raw longReadsCov30.fasta
 ```
 *Canu requires a file "specfile.dat" in the working directory. This file is used to pass more options to canu. For our purposes this file can be empty.*
 
@@ -73,7 +74,7 @@ Assess both of your assemblies with QUAST:
 ```
 quast.py assemblyFolder/contigFile -R refChimp1.fna
 ```
-*The contig file will be named something like "longReadsCov30.contig.fa" or "contigs.fa".*
+*The contig file will be named something like "longReadsCov30.contigs.fa" or "contigs.fa".*
 
 Open quast_results/results/report.pdf to see the results. What do you see?
 
