@@ -100,17 +100,19 @@ To assemble the short reads by alignment we need a different alignment tool. Her
 ```
 bowtie2-build refChimp1.fna refChimp1.fna
 bowtie2 -f -x refChimp1.fna -U shortReadsCov30.fasta -S shortReadsCov30_aligned.sam
+samtools view -bS shortReadsCov30_aligned.sam > shortReadsCov30_aligned.bam
+samtools sort shortReadsCov30_aligned.bam shortReadsCov30_aligned.sorted.bam
+samtools index shortReadsCov30_aligned.sorted.bam
 ```
-<!--- samtools view -bS shortReadsCov30_aligned.sam > shortReadsCov30_aligned.bam --->
-<!--- samtools sort shortReadsCov30_aligned.bam shortReadsCov30_aligned.sorted.bam --->
-<!--- samtools index shortReadsCov30_aligned.sorted.bam --->
+
 How much of the sequence has been covered (it should say in the terminal)?
 
-<!--- Tutorial on [samtools](http://biobits.org/samtools_primer.html). --->
+Tutorial on [samtools](http://biobits.org/samtools_primer.html).
+To see how much of your genome was mapped, run:
 
-<!--- To see how much of your genome was mapped, run:
-
-<!--- samtools flagstat shortReadsCov30_aligned.sorted.bam --->
+```
+samtools flagstat shortReadsCov30_aligned.sorted.bam
+```
 
 How do you explain the difference in '% genome covered' between the *de-novo* and the alignment assembly?
 
