@@ -47,9 +47,9 @@ Perform *de-novo* assembly with short reads using Velvet.
 velveth shortReadsCov30_assembly 21 shortReadsCov30.fasta
 velvetg shorReadsCov30_assembly
 ```
-This will create a folder called “shortReadsCov30_assembly” that contains your short-read assembly.
+*This will create a folder called “shortReadsCov30_assembly” that contains your short-read assembly.*
 
-Velveth takes a number of sequence files as input, generates a hashtable and spits out two files sequences and roadmaps, which are required by velvetg.
+*Velveth takes a number of sequence files as input, generates a hashtable and spits out two files sequences and roadmaps, which are required by velvetg.*
 
 In the velveth command '21' is the kmer length used for the hash table. If you would like to know more read section 5.2 in the [manual](http://www.ebi.ac.uk/~zerbino/velvet/Manual.pdf). If you are interested try playing around with this value and see how it affects the assembly.
 
