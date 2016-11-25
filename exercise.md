@@ -8,7 +8,7 @@
 
 **Optional:**
 - [Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) (short read aligner)
-- [LAST](http://last.cbrc.jp/) (long read aligner)
+<!--- - [LAST](http://last.cbrc.jp/) (long read aligner) --->
 - [samtools](http://www.htslib.org/download/) (for manipulating alignments)
 
 
