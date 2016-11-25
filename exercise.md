@@ -1,4 +1,4 @@
-# Comparing assembly of repetitive sequences using long and short reads.
+# Comparing assembly of repetitive sequences using long and short reads: A tutorial
 
 **Software requirements**
 - [ReadSim](http://sourceforge.net/p/readsim/wiki/manual/) (read simulator)
