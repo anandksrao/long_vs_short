@@ -5,12 +5,10 @@
 - [Velvet](https://www.ebi.ac.uk/~zerbino/velvet/) (short read *de-novo* assembler)
 - [Canu](https://github.com/marbl/canu/releases) (long read *de-novo* assembler)
 - [QUAST](http://bioinf.spbau.ru/quast) (assessment of assemblies)
-
-**Optional:**
 - [Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) (short read aligner)
 <!--- - [LAST](http://last.cbrc.jp/) (long read aligner) --->
 - [samtools](http://www.htslib.org/download/) (for manipulating alignments)
-
+- [Tablet](https://ics.hutton.ac.uk/tablet/) (assembly viewer)
 
 ### Introduction
 The aim of this exercise is to demonstrate the advantages of long reads in the assembly of repetitive genome sequences. We will try to assemble a small part of Y chromosome known to be highly repetitive (many satellites). For a tutorial on de-novo assembly and read alignment see [here](https://github.com/demharters/assemblyTutorial).
@@ -103,7 +101,7 @@ samtools sort shortReadsCov30_aligned.bam shortReadsCov30_aligned.sorted.bam
 samtools index shortReadsCov30_aligned.sorted.bam
 ```
 
-To visualise the alignment open Tablet and load your sorted.bam file as the assembly and your ref.fasta file as reference. A new entry should appear in the left column. Select it and have a look at the assembly. If you don’t see the coverage, go to ‘Advanced’ and select ‘coverage’.
+To visualise the alignment open the [Tablet](https://ics.hutton.ac.uk/tablet/) assembly viewer, and load your sorted.bam file as the assembly and your ref.fasta file as reference. A new entry should appear in the left column. Select it and have a look at the assembly. If you don’t see the coverage, go to ‘Advanced’ and select ‘coverage’.
 
 How do you explain the difference between the *de-novo* and the alignment assembly?
 
