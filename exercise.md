@@ -1,4 +1,4 @@
-# Comparing assembly of repetitive sequences using long and short reads: A tutorial
+# Tutorial on genome assembly of repetitive genomes using long and short sequencing reads
 
 **Software requirements**
 - [ReadSim](http://sourceforge.net/p/readsim/wiki/manual/) (read simulator)
