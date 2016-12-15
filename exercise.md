@@ -109,7 +109,7 @@ How do you explain the difference between the *de-novo* and the alignment assemb
 - Tutorial on [samtools](http://biobits.org/samtools_primer.html).
 - Beginner’s guide to comparative bacterial genome analysis using next-generation sequence data
 [DOI: 10.1186/2042-5783-3-2](http://microbialinformaticsj.biomedcentral.com/articles/10.1186/2042-5783-3-2)
-- Treangen et al. "Repetitive DNA and next-generation sequencing: computational challenges and solutions." Nature Reviews Genetics 13.1 (2012): 36-46.
+- Treangen et al. "[Repetitive DNA and next-generation sequencing: computational challenges and solutions.](http://www.nature.com/nrg/journal/v13/n1/full/nrg3117.html)" Nature Reviews Genetics 13.1 (2012): 36-46.
 - [Celera (Canu) Assembler](http://wgs-assembler.sourceforge.net/wiki/index.php/Celera_Assembler_Terminology)
  [Canu Terminology](http://wgs-assembler.sourceforge.net/wiki/index.php/Celera_Assembler_Terminology) (some of it is irrelevant to nanopore reads e.g. mate-pairs)
 [Slides on genome analysis](http://schatzlab.cshl.edu/teaching/) by the Schatz lab
